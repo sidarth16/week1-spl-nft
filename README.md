@@ -322,3 +322,18 @@ sidarths@Sidarths-MacBook-Pro week1-spl-nft % npm run nft:transfer
 
 Transferred NFT: 3vPYfLH5msC7okzDjw3sasygeSwEdMxi3ZZQZWjm4CjgcJT9ZjwRaArZLGuW9cc2y6rbEWdYmVCmehtJStWrkycF
 ```
+
+## Devnet Transaction Links
+
+The following links open the recorded transactions in Solana Explorer on
+devnet:
+
+| Task | Transaction |
+| --- | --- |
+| SPL mint creation | [View transaction](https://explorer.solana.com/tx/dMhdBYNHuSutChUpxPaABtUPJ4JnXLA4dfyCY1QWqq3u1aFxdyL2yDfhLCewgmN12LyEAJWoxesptabMd3UJmFJ?cluster=devnet) |
+| SPL metadata | [View transaction](https://explorer.solana.com/tx/2YcmLWTbB4Rs3UKoH5GTGSNnRqz2HfPV6CXp9yDjTogW8ug8HjsuEnJ9WmCF8voY4pZfETYxVwZBL4sg58s4N6g8?cluster=devnet) |
+| SPL token mint | [View transaction](https://explorer.solana.com/tx/2k1TD9jfn8CkK36J8WfTSHMSmNZi49Bqqtdefc4gSpdbeqF8ciHxQCGC8kieBChoPZotCQQeP8WGx8bz4VzYwvh6?cluster=devnet) |
+| SPL token transfer | [View transaction](https://explorer.solana.com/tx/3hPfrKteLB33VCb1a8doYLudmz8aobYGoYktGmYyix61SjtKRz5WTvnchFViCPXq9AWdZz88j7cocrbXya7jMER4?cluster=devnet) |
+| MPL Core NFT mint | [View transaction](https://explorer.solana.com/tx/2ZaRbUBcosNJMqWoV2An1HAd9h6rdR3eLKuTKowNuy45imVcfQDkDafXunR9NhXh3acJUfKPauTqiTZHqtNVdxmF?cluster=devnet) |
+| NFT metadata update | [View transaction](https://explorer.solana.com/tx/3ycmR5uufrjsJdoP23Rd7dsjFhHQWiwGDw8dHhvkXqK4WoNpb8abJJq2b36TrQwYks1Uqo2xL6DGxbnQkMJ8J6va?cluster=devnet) |
+| Optional NFT transfer | [View transaction](https://explorer.solana.com/tx/3vPYfLH5msC7okzDjw3sasygeSwEdMxi3ZZQZWjm4CjgcJT9ZjwRaArZLGuW9cc2y6rbEWdYmVCmehtJStWrkycF?cluster=devnet) |
