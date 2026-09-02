@@ -236,8 +236,6 @@ npm run nft:burn
 
 ## Recorded Execution Output
 
-The following is the execution trace recorded in [`outputs`](outputs) while
-running the scripts on Solana devnet:
 
 1. Mint and transfer your own SPL token.
 
