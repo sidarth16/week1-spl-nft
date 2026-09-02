@@ -322,8 +322,3 @@ sidarths@Sidarths-MacBook-Pro week1-spl-nft % npm run nft:transfer
 
 Transferred NFT: 3vPYfLH5msC7okzDjw3sasygeSwEdMxi3ZZQZWjm4CjgcJT9ZjwRaArZLGuW9cc2y6rbEWdYmVCmehtJStWrkycF
 ```
-
-The generated addresses and signatures are also saved in
-[`artifacts/spl.json`](artifacts/spl.json) and
-[`artifacts/nft.json`](artifacts/nft.json). Do not include wallet private keys
-or seed phrases in the repository or screenshot.
