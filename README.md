@@ -216,7 +216,7 @@ npm run spl:init
 npm run spl:metadata
 npm run spl:mint
 
-export SPL_RECIPIENT=RECIPIENT_PUBLIC_KEY
+export SPL_RECIPIENT=<RECIPIENT_PUBLIC_KEY>
 npm run spl:transfer
 
 npm run nft:image
@@ -228,33 +228,102 @@ npm run nft:update
 Optional tasks:
 
 ```bash
-export NFT_RECIPIENT=RECIPIENT_PUBLIC_KEY
+export NFT_RECIPIENT=<RECIPIENT_PUBLIC_KEY>
 npm run nft:transfer
 npm run nft:burn
 ```
 
-## Submission Evidence
 
-The assignment asks for the repository and a screenshot showing successful
-execution. Capture the terminal output from the commands above. Each successful
-script prints its result and transaction signature, for example:
+## Recorded Execution Output
+
+The following is the execution trace recorded in [`outputs`](outputs) while
+running the scripts on Solana devnet:
+
+1. Mint and transfer your own SPL token.
 
 ```text
-Mint created: MINT_ADDRESS
-Transaction: TRANSACTION_SIGNATURE
 
-Your ATA is: ASSOCIATED_TOKEN_ACCOUNT
+sidarths@Sidarths-MacBook-Pro week1-spl-nft % npm run spl:init
+
+> week1-spl-nft@1.0.0 spl:init
+> npx ts-node src/spl.ts init
+
+Mint created: GvWRYF1BtYMCdJwcQShwm9UTEAimTe59TCesuem8yQEa
+Transaction: dMhdBYNHuSutChUpxPaABtUPJ4JnXLA4dfyCY1QWqq3u1aFxdyL2yDfhLCewgmN12LyEAJWoxesptabMd3UJmFJ
+
+sidarths@Sidarths-MacBook-Pro week1-spl-nft % npm run spl:metadata
+
+> week1-spl-nft@1.0.0 spl:metadata
+> npx ts-node src/spl.ts metadata
+
+Metadata attached: 4d482fb8be31f7757cc8f024f81551372064107f8c869872c38cdb06c4d082852322c5129268cffca873bd5e0d675b250a92318753e213f40178419091cf6509
+
+sidarths@Sidarths-MacBook-Pro week1-spl-nft % npm run spl:mint
+
+> week1-spl-nft@1.0.0 spl:mint
+> npx ts-node src/spl.ts mint
+
+Your ATA is: C1EKneExWrgDDrGFoEuRWwa8ZjC2uYURP4PAdLi8d6qJ
 Minted amount: 1000000
-Transaction: TRANSACTION_SIGNATURE
+Transaction: 2k1TD9jfn8CkK36J8WfTSHMSmNZi49Bqqtdefc4gSpdbeqF8ciHxQCGC8kieBChoPZotCQQeP8WGx8bz4VzYwvh6
 
-Signature: TRANSACTION_SIGNATURE
-Asset: NFT_ASSET_ADDRESS
+sidarths@Sidarths-MacBook-Pro week1-spl-nft % export SPL_RECIPIENT=8MGGrmWLYRdHSm4CnP2tVnhEo4gUmJbZFnqcnn2LXp2J
+sidarths@Sidarths-MacBook-Pro week1-spl-nft % npm run spl:transfer
 
-Updated NFT: UPDATED_METADATA_URI
+> week1-spl-nft@1.0.0 spl:transfer
+> npx ts-node src/spl.ts transfer
+
+Your from ATA is: C1EKneExWrgDDrGFoEuRWwa8ZjC2uYURP4PAdLi8d6qJ
+Recipient ATA is: 727aNxA3KFbgCDvoMshWaD4EtnJnMgwE77sj5ZjAcnyK
+Transferred amount: 500000
+Transaction: 3hPfrKteLB33VCb1a8doYLudmz8aobYGoYktGmYyix61SjtKRz5WTvnchFViCPXq9AWdZz88j7cocrbXya7jMER4
 ```
 
-The screenshot should show the required commands completing without errors and
-their transaction signatures. The `artifacts/` files contain the generated
-addresses and signatures for reference. Do not include `id.json`, wallet
-private keys, or seed phrases in the screenshot or repository.
+2. Mint an NFT using MPL Core.
 
+```text
+sidarths@Sidarths-MacBook-Pro week1-spl-nft % npm run nft:image
+
+> week1-spl-nft@1.0.0 nft:image
+> npx ts-node src/nft.ts image
+
+Your image URI: https://gateway.irys.xyz/FSXzXdUMbqXsmkaivhb4W2Nnn8AkSK64pVmWAggjiQPL
+
+sidarths@Sidarths-MacBook-Pro week1-spl-nft % npm run nft:metadata
+
+> week1-spl-nft@1.0.0 nft:metadata
+> npx ts-node src/nft.ts metadata
+
+Metadata URI: https://gateway.irys.xyz/GyFiXE5MPYom22Jdbsr54c4bk8YvzNpiB3Sicm8TVsH4
+
+sidarths@Sidarths-MacBook-Pro week1-spl-nft % npm run nft:mint
+
+> week1-spl-nft@1.0.0 nft:mint
+> npx ts-node src/nft.ts mint
+
+Signature: 2ZaRbUBcosNJMqWoV2An1HAd9h6rdR3eLKuTKowNuy45imVcfQDkDafXunR9NhXh3acJUfKPauTqiTZHqtNVdxmF
+Asset: ARaxFaGerUYExdpQCNhASYVq4hHq4Am14Xaba5NpG9eW
+```
+
+3. Update the NFT's name and metadata as the update authority
+```text
+sidarths@Sidarths-MacBook-Pro week1-spl-nft % npm run nft:update
+
+> week1-spl-nft@1.0.0 nft:update
+> npx ts-node src/nft.ts update
+
+Updated NFT: https://gateway.irys.xyz/91DHBT3Q2ATECLaAWNpJPRZ3aF1uJFeDz4C9AJHVasx2
+
+sidarths@Sidarths-MacBook-Pro week1-spl-nft % export NFT_RECIPIENT=8MGGrmWLYRdHSm4CnP2tVnhEo4gUmJbZFnqcnn2LXp2J
+sidarths@Sidarths-MacBook-Pro week1-spl-nft % npm run nft:transfer
+
+> week1-spl-nft@1.0.0 nft:transfer
+> npx ts-node src/nft.ts transfer
+
+Transferred NFT: 3vPYfLH5msC7okzDjw3sasygeSwEdMxi3ZZQZWjm4CjgcJT9ZjwRaArZLGuW9cc2y6rbEWdYmVCmehtJStWrkycF
+```
+
+The generated addresses and signatures are also saved in
+[`artifacts/spl.json`](artifacts/spl.json) and
+[`artifacts/nft.json`](artifacts/nft.json). Do not include wallet private keys
+or seed phrases in the repository or screenshot.
